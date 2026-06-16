@@ -125,6 +125,20 @@ Website/
 
 ---
 
+## Landing Page
+
+This repository includes an original React/Vite landing page for ONGarde.org.
+
+```bash
+yarn install
+yarn dev
+yarn build
+```
+
+The Vite app is served from the repository root and uses `public-ongarde/` for the generated black-and-white editorial hero image and favicon.
+
+---
+
 ## Project Timeline
 
 | Phase     | Description                  |
