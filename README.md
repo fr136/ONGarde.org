@@ -1,157 +1,35 @@
-# ONGarde.org
-Protecting those who protect other
+﻿# ONGarde — Cybersécurité éthique pour ONG
 
-# ONGarde
+ONGarde est un projet de démo day cybersécurité visant à concevoir une organisation cyber réaliste pour une ONG disposant de moyens limités mais manipulant des données sensibles.
 
-## Cybersecurity Infrastructure for Non-Governmental Organizations
+## Objectifs
 
-ONGarde is a fictional non-profit organization created as part of the Jedha Cyber Full Stack final project.
+- Protéger les données sensibles : bénéficiaires, bénévoles, donateurs, documents internes.
+- Maintenir la continuité d'activité en cas d'incident.
+- Segmenter le réseau et réduire l'exposition.
+- Centraliser les identités avec Samba Active Directory.
+- Superviser les événements avec Wazuh.
+- Préparer une stratégie de sauvegarde et de reprise.
 
-Our mission is to help humanitarian organizations improve their cybersecurity posture through secure, open-source and cost-effective technologies.
+## Répartition de l'équipe
 
-The project focuses on designing, deploying, securing, documenting and presenting a realistic IT infrastructure adapted to the needs of NGOs.
+- Jean : pfSense, firewall, routage, redondance, flux réseau.
+- Muriel : Wazuh, agents Wazuh, supervision, détection, alertes.
+- Valentina : base de données, Nextcloud, services collaboratifs.
+- Franck : Samba Active Directory, site web ONGarde, DMZ, Nginx.
 
----
+## Architecture cible
 
-## Project Objectives
+L'architecture cible repose sur deux sites, Lyon et Marseille, avec VPN inter-site, segmentation réseau, pfSense, Samba AD, Wazuh, Nextcloud, base de données, serveur web en DMZ, sauvegardes 3-2-1 et logique PRA/PCA.
 
-* Build a secure and scalable infrastructure
-* Centralize identity and access management
-* Provide secure file sharing and collaboration
-* Monitor security events and system activity
-* Ensure backup and recovery capabilities
-* Implement defense-in-depth security controls
-* Demonstrate cybersecurity best practices using open-source technologies
+## Limites du lab
 
----
+L'environnement GNS3 a imposé des contraintes de ressources, de routage et de stabilité réseau. Le projet distingue l'architecture cible, les briques maquettées, les éléments validés et la roadmap d'évolution.
 
-## Infrastructure Overview
+## Contenu du dépôt
 
-### Core Components
-
-| Component                    | Technology             |
-| ---------------------------- | ---------------------- |
-| Firewall                     | pfSense                |
-| Identity Management          | Samba Active Directory |
-| Web Server                   | Nginx                  |
-| Database                     | PostgreSQL             |
-| File Sharing & Collaboration | Nextcloud              |
-| Security Monitoring          | Wazuh                  |
-| VPN                          | WireGuard              |
-| Backup Solution              | Restic                 |
-| Operating System             | Ubuntu Server / Debian |
-
----
-
-## Network Architecture
-
-### Headquarters (Lyon)
-
-* Nginx Reverse Proxy
-* PostgreSQL Database
-* Nextcloud Collaboration Platform
-* Samba Active Directory
-* Wazuh SIEM
-
-### Branch Office (Marseille)
-
-* Nextcloud Replica
-* Samba Domain Services
-* Wazuh Agent
-* WireGuard VPN Connection
-
----
-
-## Security Controls
-
-* Centralized authentication
-* Role-based access control (RBAC)
-* Firewall filtering
-* VPN encrypted communications
-* TLS encryption
-* Security monitoring with Wazuh
-* Log collection and auditing
-* Daily backups
-* Fail2ban protection
-* Principle of least privilege
-
----
-
-## Compliance Considerations
-
-The project follows security principles inspired by:
-
-* NIST Cybersecurity Framework
-* CIS Controls
-* GDPR requirements
-* NGO cybersecurity best practices
-
----
-
-## Project Deliverables
-
-* Technical Specification Document
-* Network Architecture Diagram
-* Infrastructure Deployment
-* Risk Assessment
-* Technology Watch Report
-* Penetration Test Report
-* Final Presentation
-
----
-
-## Team
-
-Equal Project Leads
-
-* Franck Rouane
-* Valentina Masiello
-* Jean Dovy
-* Muriel Has
-
----
-
-## Repository Structure
-
-```text
-Architecture/
-Documentation/
-Infrastructure/
-Pentest/
-Presentation/
-Screenshots/
-Website/
-```
-
----
-
-## Landing Page
-
-This repository includes an original React/Vite landing page for ONGarde.org.
-
-```bash
-yarn install
-yarn dev
-yarn build
-```
-
-The Vite app is served from the repository root and uses `public-ongarde/` for the generated black-and-white editorial hero image and favicon.
-
----
-
-## Project Timeline
-
-| Phase     | Description                  |
-| --------- | ---------------------------- |
-| Days 1-5  | Infrastructure Deployment    |
-| Days 6-8  | Security Assessment          |
-| Days 9-10 | Documentation & Presentation |
-
----
-
-## Project Statement
-
-Protecting those who protect others.
-
-ONGarde demonstrates how a modern NGO can build a secure, resilient and cost-effective infrastructure using open-source technologies while maintaining strong cybersecurity practices.
-
+- livrables/ : rapports, scripts de présentation, documents PDF.
+- presentation/ : support de présentation.
+- schema/ : cartographies et schémas réseau.
+- screenshots/ : preuves techniques et captures.
+- scripts/ : commandes, configurations et notes techniques.
